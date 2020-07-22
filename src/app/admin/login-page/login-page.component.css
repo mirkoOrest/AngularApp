@@ -1,0 +1,12 @@
+.alert {
+  padding: 0.7rem;
+  margin: 1rem 0;
+  opacity: 0.9;
+  background: black;
+  color: #333;
+}
+
+.alert-danger {
+  background: red;
+  color: #fff;
+}

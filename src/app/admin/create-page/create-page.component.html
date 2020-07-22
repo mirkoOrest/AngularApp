@@ -1,0 +1,37 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h1>Create new post</h1>
+
+  <div class="form-control">
+    <label for="title">Title post:</label>
+    <input id="title" type="text" formControlName="title">
+    <div
+      *ngIf="form.get('title').touched && form.get('title').invalid"
+      class="validation"
+    >
+      <small *ngIf="form.get('title').errors.required">Enter post title</small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label>Post content:</label>
+    <quill-editor formControlName="text"></quill-editor>
+  </div>
+
+  <div class="form-control">
+    <label for="author">Post Author:</label>
+    <input id="author" type="text" formControlName="author">
+    <div
+      *ngIf="form.get('author').touched && form.get('author').invalid"
+      class="validation"
+    >
+      <small *ngIf="form.get('author').errors.required">Enter post author</small>
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    class="btn"
+    [disabled]="form.invalid"
+  >create post
+  </button>
+</form>
